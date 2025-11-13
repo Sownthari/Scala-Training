@@ -26,9 +26,9 @@ object Database {
 
   // Database credentials
   private val url =
-    "jdbc:mysql://azuremysql8823.mysql.database.azure.com:3306/sownthari"
+    "jdbc:mysql://xxxxxxxxx:3306/sownthari"
   private val username = "mysqladmin"
-  private val password = "Password@12345"
+  private val password = "xxxxxxxxx"
 
   def getConnection(): Connection =
     DriverManager.getConnection(url, username, password)

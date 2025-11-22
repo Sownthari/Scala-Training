@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <option name="separateProdTestSources" value="true" />
+    <profile name="sbt 1" modules="Producer-Service,Producer-Service.main,Producer-Service.test,kafka-consumer-person,kafka-consumer-person.main,kafka-consumer-person.test,producer-service,producer-service.main,producer-service.test" />
+  </component>
+</project>

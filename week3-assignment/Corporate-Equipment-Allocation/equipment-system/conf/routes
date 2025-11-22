@@ -1,0 +1,45 @@
+GET     /assets/*file  controllers.Assets.versioned(path="/public", file: Asset)
+
+# -------------------------
+# AUTH
+# -------------------------
+POST    /api/auth/login                     controllers.AuthController.login
+
+# -------------------------
+# USERS (system admin access)
+# -------------------------
+POST    /api/users                           controllers.UserController.createUser
+
+# -------------------------
+# EMPLOYEES
+# -------------------------
+POST    /api/employees                       controllers.EmployeeController.createEmployee
+
+# -------------------------
+# EQUIPMENT TYPES
+# -------------------------
+GET     /api/equipment-types                 controllers.EquipmentController.getAllEquipmentTypes
+
+# -------------------------
+# EQUIPMENT ITEMS
+# -------------------------
+GET     /api/equipment                       controllers.EquipmentController.getAll
+GET     /api/equipment/:id                   controllers.EquipmentController.getById(id: Int)
+GET     /api/equipment-by-serialno/:serialNo controllers.EquipmentController.getBySerialNo(serialNo: String)
+POST    /api/equipment                       controllers.EquipmentController.create
+PATCH   /api/equipment/:id/status            controllers.EquipmentController.updateStatus(id: Int)
+DELETE  /api/equipment/:id                   controllers.EquipmentController.delete(id: Int)
+
+# -------------------------
+# ALLOCATIONS (equipment allocation to employees)
+# -------------------------
+GET     /api/allocations                     controllers.AllocationController.getAll
+GET     /api/allocations/:id                 controllers.AllocationController.getById(id: Int)
+POST    /api/allocations                     controllers.AllocationController.create
+PATCH   /api/allocations/:id/return          controllers.AllocationController.markReturned(id: Int)
+DELETE  /api/allocations/:id                 controllers.AllocationController.delete(id: Int)
+
+# -------------------------
+# OVERDUE LOGS
+# -------------------------
+GET     /api/overdue-logs                    controllers.OverdueLogController.getAll

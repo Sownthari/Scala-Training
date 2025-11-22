@@ -1,0 +1,35 @@
+GET     /assets/*file  controllers.Assets.versioned(path="/public", file: Asset)
+
+# -------------------------
+# AUTH
+# -------------------------
+POST    /api/auth/login                     controllers.AuthController.login
+
+# -------------------------
+# USERS (system admin access)
+# -------------------------
+POST    /api/users                           controllers.UserController.createUser
+
+# -------------------------
+# EMPLOYEES
+# -------------------------
+POST    /api/employees                       controllers.EmployeeController.createEmployee
+
+
+# ---------------------------------------
+# MEETING ROOMS
+# ---------------------------------------
+POST    /api/meeting-rooms                  controllers.MeetingRoomController.createRoom
+GET     /api/meeting-rooms                  controllers.MeetingRoomController.listRooms
+GET     /api/meeting-rooms/:id              controllers.MeetingRoomController.getRoom(id: Long)
+PUT     /api/meeting-rooms/:id              controllers.MeetingRoomController.updateRoom(id: Long)
+
+# ---------------------------------------
+# RESERVATIONS
+# ---------------------------------------
+POST    /api/reservations                   controllers.ReservationController.createReservation
+GET     /api/reservations                   controllers.ReservationController.listReservations
+GET     /api/reservations/:id               controllers.ReservationController.getReservation(id: Long)
+PUT     /api/reservations/:id               controllers.ReservationController.updateReservation(id: Long)
+DELETE  /api/reservations/:id               controllers.ReservationController.cancelReservation(id: Long)
+
